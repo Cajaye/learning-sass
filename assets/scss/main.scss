@@ -1,0 +1,71 @@
+@use "assets/base";
+@use "sass:math";
+@use "assets/breakpoints";
+
+//this is like a function parameter and you can set a default value
+@mixin theme($theme: DarkGrey) {
+  background-color: $theme;
+  color: #fff;
+}
+
+@mixin basic_flex() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+%header {
+  @include basic_flex;
+  padding: 1.5rem;
+  font-weight: 600;
+  font-size: 1.45rem;
+  border-radius: 1.45rem;
+  margin: 1rem auto;
+  width: fit-content;
+  @include breakpoints.break(tablet) {
+    width: 80%;
+  }
+}
+
+.first_header {
+  @extend %header;
+  @include theme($theme: black);
+}
+
+.new_header {
+  @extend %header;
+  @include theme($theme: #cdb4db);
+}
+
+%logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 12px;
+}
+
+.logo {
+  @extend %logo;
+  background-color: #fff;
+}
+
+.logo_2 {
+  @extend %logo;
+  background-color: black;
+}
+
+nav {
+  ul {
+    list-style: none;
+  }
+  li {
+    margin-left: 1rem;
+    @include breakpoints.break(tablet) {
+      display: inline-block;
+    }
+  }
+  a {
+    color: #fff;
+    //color: base.$secondary-text-color;
+    text-decoration: none;
+  }
+}
