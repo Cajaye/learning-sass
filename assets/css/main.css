@@ -24,15 +24,9 @@ body {
   justify-content: space-between;
   padding: 1.5rem;
   font-weight: 600;
-  font-size: 1.45rem;
-  border-radius: 1.45rem;
+  font-size: 1.25rem;
   margin: 1rem auto;
-  width: fit-content;
-}
-@media only screen and (min-width: 768px) {
-  .new_header, .first_header {
-    width: 80%;
-  }
+  width: 80%;
 }
 
 .first_header {
@@ -46,33 +40,50 @@ body {
 }
 
 .logo_2, .logo {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 12px;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 2rem;
+  border-radius: 5px;
+}
+
+.logo-container {
+  display: grid;
+  grid-template-columns: 20px 20px;
+  row-gap: 0.5rem;
+  column-gap: 0.3rem;
+  margin-right: 2rem;
 }
 
 .logo {
-  background-color: #fff;
+  background-color: #cdb4db;
 }
 
 .logo_2 {
   background-color: black;
 }
 
+nav {
+  text-align: center;
+}
 nav ul {
   list-style: none;
 }
 nav li {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
+  display: inline-block;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 700px) {
   nav li {
-    display: inline-block;
+    margin-left: 1.5rem;
   }
 }
 nav a {
   color: #fff;
   text-decoration: none;
+}
+nav a::after {
+  content: "";
+  background-image: url("https://github.com/Cajaye/learning-sass/blob/main/home.svg");
 }
 
 /*# sourceMappingURL=main.css.map */
